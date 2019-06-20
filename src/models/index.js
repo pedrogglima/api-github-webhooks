@@ -7,7 +7,5 @@ const connectDb = () => {
 
 const models = { event };
 
-module.exports = {
-  connectDb,
-  models
-};
+exports.connectDb = connectDb;
+exports.models = models;
