@@ -20,6 +20,10 @@ app.use((req, res, next) => {
 
 app.use("/github", routes.github);
 
+app.get("*", function(req, res) {
+  res.status(404).send("Resource not found. Try another route.");
+});
+
 connectDb()
   .then(async () => {
     app.listen(process.env.PORT, () =>

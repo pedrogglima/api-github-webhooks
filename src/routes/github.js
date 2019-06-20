@@ -19,9 +19,18 @@ router.post("/webhooks/payload", async (req, res) => {
   }
 });
 
-router.get("/:id/event", async (req, res) => {
+router.get("/webhooks/:id/event", async (req, res) => {
   try {
     const event = await req.context.models.Event.findById(req.params["id"]);
+    return res.send(event);
+  } catch (err) {
+    return res.send(err);
+  }
+});
+
+router.get("/webhooks/events", async (req, res) => {
+  try {
+    const event = await req.context.models.Event.find().select("id");
     return res.send(event);
   } catch (err) {
     return res.send(err);
