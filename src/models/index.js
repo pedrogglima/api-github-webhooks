@@ -1,11 +1,11 @@
 mongoose = require("mongoose");
-event = require("./github/event");
+Event = require("./github/event");
 
 const connectDb = () => {
   return mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
 };
 
-const models = { event };
+const models = { Event };
 
 exports.connectDb = connectDb;
 exports.models = models;

@@ -9,6 +9,15 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use((req, res, next) => {
+  req.context = {
+    models
+    // For handling manual authentication
+    //auth: await models.User.findByLogin('user-name')
+  };
+  next();
+});
+
 app.use("/github", routes.github);
 
 connectDb()
