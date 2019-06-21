@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 app.use("/github", routes.github);
 
 app.get("*", function(req, res) {
-  res.status(404).send("Resource not found. Try another route.");
+  res.status(404).send("Page not found.");
 });
 
 connectDb()
