@@ -2,14 +2,13 @@
 
 This project was asked as a job interview to work with Rails. Basically, I was asked to create a Rails API with two endpoints, the first one should save data from the [Github Webhook API](https://developer.github.com/webhooks/) and the second retrieve the saved data by id.
 
-I found the project with an educational purpose and decided to reproduce it, but using a different Stack. For the interview I used Rails + Postgres, for this one I decided to go with Node + Mongodb.
+I found the project with an educational purpose and decided to reproduce it, but using a different Stack. For the interview I used Rails & Postgres, for this one I decided to go with Node & Mongodb.
 
 # Requirements
 
 The versions here was what I used on the project.
 
 - Linux system
-- Browser (Firefox, Chrome, ..., Safari)
 - Node 10.15
 - npm 6.9
 - Mongodb 4.0
@@ -41,7 +40,7 @@ Now you should install & set up Ngrok to create a public url. Install Ngrok, you
 ./ngrok http 3000
 ```
 
-Ngrok will generate a public url that points to our server (localhost:3000 for instance). You should use this url to set up our Github Webhook.
+Ngrok will generate a public url that points to your server (localhost:3000 for instance). You should use this url to set up your Github Webhook.
 
 So, for example, on your github repository that was set up with webhooks ([How create Webhooks on your reposiory](https://developer.github.com/webhooks/creating/)), every time that a certain event happen on your repository, Github will send data about that event to our server.
 
@@ -55,7 +54,7 @@ So, for example, on your github repository that was set up with webhooks ([How c
 
   - http://localhost:3000/github/webhooks/events
 
-    This URL is used to retrieve the IDs from the data saved on the database. With this IDs you can retrieve the whole information about the event with the below url.
+    This URL is used to retrieve the IDs from the data saved on the database. With these IDs you can retrieve the whole information about the event with the next url.
 
   - http://localhost:3000/github/webhooks/:id/event
 
